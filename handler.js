@@ -34,7 +34,7 @@ function getFaces(bucket, image) {
         }
 
         resolve(data);
-    ));
+    }));
 }
 
 module.exports.info = (event, context, callback) => {
@@ -42,13 +42,11 @@ module.exports.info = (event, context, callback) => {
         getLabels('rekognition-tegud-test', '19424023_10102800025414035_3309316934660864874_n.jpg'),
         getFaces('rekognition-tegud-test', '19424023_10102800025414035_3309316934660864874_n.jpg')
     ])
-    .then(data => {
-        callback(null, {
-            statusCode: 200,
-            body: JSON.stringify({
-                labels: data[0],
-                faces: data[1]
-            }),
-        });
-    });
+    .then(data => callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({
+            labels: data[0],
+            faces: data[1]
+        })
+    }));
 };
