@@ -7,9 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install dependencies
-          command: npm install
-      - run:
           name: deploy
           command: serverless deploy
       - store_artifacts:
