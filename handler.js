@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const rek = new AWS.Rekognition();
 
-module.exports.hello = (event, context, callback) => {
+module.exports.info = (event, context, callback) => {
     rek.detectLabels({
         Image: {
             S3Object: {
