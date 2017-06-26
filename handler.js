@@ -17,7 +17,7 @@ function getLabels(bucket, image) {
         }
 
         resolve(data);
-    ));
+    }));
 }
 
 function getFaces(bucket, image) {
